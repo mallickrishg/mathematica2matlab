@@ -1,3 +1,4 @@
+(* ::Package:: *)
 
 (****** ToMatlab.mth -- Mathematica expressions into Matlab form *************)
 
@@ -249,6 +250,7 @@ ToMatlabaux[Sec] = "sec"
 ToMatlabaux[ArcSin] = "asin"
 ToMatlabaux[ArcCos] = "acos"
 ToMatlabaux[ArcTan] = "atan"
+ToMatlabaux[ArcTan[x_, y_]] := "atan2(" <> ToMatlabaux[y] <> ", " <> ToMatlabaux[x] <> ")"
 ToMatlabaux[ArcCot] = "acot"
 ToMatlabaux[ArcCsc] = "acsc"
 ToMatlabaux[ArcSec] = "asec"
@@ -441,4 +443,7 @@ findcut[s_String] :=
 End[]
 
 EndPackage[]
+
+
+
 
